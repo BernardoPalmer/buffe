@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Lista de Produção</h2>
+<table>
+    {% if Intermitentes is defined %}
+    <h1>Intermitentes: {{ Intermitentes }}</h1>
+    <br>
+{% endif %}
+
+{% if Total is defined %}
+    <h1>Total: {{ Total }}</h1>
+    <br>
+{% endif %}
+
+    <!-- Your table headers and data rows will go here -->
+     <!-- Check and display the first table if present -->
+     {% if table1 %}
+        {{ table1 | safe }}
+     {% endif %}
+
+     {% if table1 and table2 %}
+        <br><br>
+    {% endif %}
+
+    {% if table2 %}
+        {{ table2 | safe }}
+    {% endif %}
+
+
+</table>
+{% endblock %}
